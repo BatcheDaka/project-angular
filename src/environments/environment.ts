@@ -12,7 +12,8 @@ export const environment = {
   storageBucket: "project-angular-d7ece.appspot.com",
   messagingSenderId: "921500994262",
   appId: "1:921500994262:web:14658035b3c5bdacd3d777",
-  measurementId: "G-HMC97WG22T"
+  measurementId: "G-HMC97WG22T",
+  databaseURL: "https://project-angular-d7ece-default-rtdb.europe-west1.firebasedatabase.app"
   }
 };
 
