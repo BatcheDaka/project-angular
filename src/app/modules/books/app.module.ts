@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/material-ui.module';
 import { BooksComponent } from './components/books/books.component';
 
@@ -7,7 +9,9 @@ import { BooksComponent } from './components/books/books.component';
     BooksComponent
   ],
     imports: [
-  MaterialModule
+  MaterialModule,
+  BrowserModule,
+  CommonModule
     ],
     providers: [],
     bootstrap: []

@@ -8,9 +8,8 @@ import { AboutComponent } from './components/about/about.component';
     AboutComponent
   ],
     imports: [
-  
     ],
     providers: [],
     bootstrap: []
   })
-  export class AppModuleCommun { }
+  export class AppModuleCommon { }

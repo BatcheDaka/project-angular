@@ -13,7 +13,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { MaterialModule } from './material-ui.module';
 import { AppModuleAdmin } from './modules/admin/app.module';
 import { AppModuleAuth } from './modules/authen/app.module';
-import { AppModuleCommun } from './modules/commun/app.module';
+import { AppModuleCommon } from './modules/common/app.module';
 import { AppModuleBooks } from './modules/books/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
 
@@ -32,7 +32,7 @@ import { AppModuleMenu } from './modules/menu/app.module';
     MaterialModule,
     AppModuleAdmin,
     AppModuleAuth,
-    AppModuleCommun,
+    AppModuleCommon,
     AppModuleBooks,
     AppModuleMenu
   ],
