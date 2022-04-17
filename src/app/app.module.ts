@@ -11,6 +11,11 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 //import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material-ui.module';
+import { AppModuleAdmin } from './modules/admin/app.module';
+import { AppModuleAuth } from './modules/authen/app.module';
+import { AppModuleCommun } from './modules/commun/app.module';
+import { AppModuleBooks } from './modules/books/app.module';
+import { AppModuleMenu } from './modules/menu/app.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { MaterialModule } from './material-ui.module';
     AngularFireAuthModule,
     BrowserAnimationsModule,
    // MatSliderModule,
-    MaterialModule
+    MaterialModule,
+    AppModuleAdmin,
+    AppModuleAuth,
+    AppModuleCommun,
+    AppModuleBooks,
+    AppModuleMenu
   ],
   providers: [],
   bootstrap: [AppComponent]
