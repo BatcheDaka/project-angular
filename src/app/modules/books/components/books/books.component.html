@@ -1,6 +1,28 @@
 <mat-tab-group>
     <mat-tab *ngFor="let category of categories" [label]="category.label">
-  <h1> {{category.label}} </h1>
+
+      <div class="cardList">
+
+      
+  <ng-container *ngFor="let book of getBooksByCategory(category.key)">
+    <mat-card class="cardListItem">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{book.title}}</mat-card-title>
+        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="book.urlImage" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{book.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+        <button fxFlex mat-flat-button color="primary">Add Book</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div> 
     </mat-tab>
     
 

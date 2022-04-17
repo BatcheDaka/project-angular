@@ -1,0 +1,9 @@
+.cardList {
+    width: 500px;
+    height: 400px;
+}
+
+.cardListItem {
+   
+    flex: 0 1 calc(25% - 15px);
+}

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/material-ui.module';
 import { BooksComponent } from './components/books/books.component';
@@ -11,7 +12,8 @@ import { BooksComponent } from './components/books/books.component';
     imports: [
   MaterialModule,
   BrowserModule,
-  CommonModule
+  CommonModule,
+  FlexLayoutModule
     ],
     providers: [],
     bootstrap: []
