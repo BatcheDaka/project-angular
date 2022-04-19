@@ -21,12 +21,15 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat';
 import { getAuth, signOut } from "firebase/auth";
+import { UserService } from '../../users/services/user.service';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  user = firebase.auth()
   constructor(
-    public afAuth: AngularFireAuth // Inject Firebase auth service
+    public afAuth: AngularFireAuth, // Inject Firebase auth service
+    private serviceUser:UserService
   ) {}
   // Sign in with Google
   GoogleAuth() {
@@ -39,6 +42,7 @@ export class AuthService {
       .then((result) => {
         console.log('You have been successfully logged in!');
         console.log(result.user);
+   
        // console.log(getAuth())
       })
       .catch((error) => {
@@ -57,6 +61,7 @@ signingOut(){
   getCurrentUser(){
     console.log(this.GoogleAuth());
   }
+  
 }
 
 
