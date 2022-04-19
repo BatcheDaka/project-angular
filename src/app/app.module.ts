@@ -16,6 +16,7 @@ import { AppModuleAuth } from './modules/authen/app.module';
 import { AppModuleCommon } from './modules/common/app.module';
 import { AppModuleBooks } from './modules/books/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
+import { AppModuleOrder } from './modules/orders/app.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AppModuleMenu } from './modules/menu/app.module';
     AppModuleAuth,
     AppModuleCommon,
     AppModuleBooks,
-    AppModuleMenu
+    AppModuleMenu,
+    AppModuleOrder
   ],
   providers: [],
   bootstrap: [AppComponent]
