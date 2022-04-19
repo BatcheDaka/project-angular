@@ -38,8 +38,8 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         console.log('You have been successfully logged in!');
-        console.log(result);
-        console.log(getAuth())
+        console.log(result.user);
+       // console.log(getAuth())
       })
       .catch((error) => {
         console.log(error);
@@ -49,12 +49,14 @@ export class AuthService {
 signingOut(){
   signOut(getAuth()).then(() => {
     console.log("Signed out")
-    console.log(getAuth())
+  //  console.log(getAuth())
   }).catch((error) => {
     console.log(error)
   });
 }
-
+  getCurrentUser(){
+    console.log(this.GoogleAuth());
+  }
 }
 
 
