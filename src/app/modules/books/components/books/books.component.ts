@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map, mergeMap, Subscription } from 'rxjs';
 import { CategoryService } from 'src/app/modules/common/services/category.service';
+import { ShoppingCartService } from 'src/app/modules/shoppingCart/services/shopping-cart.service';
 import { BookService } from '../../services/book.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class BooksComponent implements OnInit,OnDestroy {
   books:any[] | undefined;
   sub:Subscription | undefined;
 
-  constructor(private serviceCategory:CategoryService, private serviceBook:BookService) { }
+  constructor(private serviceCategory:CategoryService, private serviceBook:BookService, private serviceShoppingCart:ShoppingCartService) { }
 
   ngOnInit(): void {
     this.sub=this.serviceCategory.getAllCategories()
@@ -42,4 +43,7 @@ export class BooksComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
   this.sub?.unsubscribe();
   } 
+  AddToCart(books: any){
+     this.serviceShoppingCart.AddToCart(books)
+  }
 }

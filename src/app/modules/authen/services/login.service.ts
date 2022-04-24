@@ -19,7 +19,7 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat';
+import firebase from 'firebase/compat/app';
 import { getAuth, signOut } from "firebase/auth";
 import { UserService } from '../../users/services/user.service';
 @Injectable({

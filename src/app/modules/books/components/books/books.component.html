@@ -16,9 +16,10 @@
         <p>
           {{book.description}}
         </p>
+      <span fxLayoutAlign="center center" lass="price"> {{book.price | currency}} </span>
       </mat-card-content>
       <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
-        <button fxFlex mat-flat-button color="primary">Add Book</button>
+        <button fxFlex mat-flat-button color="primary" (click)="AddToCart(books)">Add Book</button>
       </mat-card-actions>
     </mat-card>
   </ng-container>
