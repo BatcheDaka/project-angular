@@ -7,6 +7,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 })
 export class AppComponent implements OnInit {
   title = 'project-angular'
+  books: any;
   constructor(private db:AngularFireDatabase)
  {
   

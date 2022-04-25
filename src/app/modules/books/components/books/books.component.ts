@@ -28,7 +28,7 @@ export class BooksComponent implements OnInit,OnDestroy {
                         ))).subscribe(([categories,books])=>{
                           this.categories=categories;
                           this.books=books;
-                          console.log(categories, books)
+                          console.log(books)
                         });
     //                     .subscribe(categories=> this.categories=categories);
     // this.serviceBook.getAllBooks()
