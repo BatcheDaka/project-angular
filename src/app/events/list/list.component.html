@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-3 offset-md-1">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
+          placeholder="Search by name..." (keyup)="searchByName()">
+      </div>
+    </div>
+    <div class="col-md-6 filter-by-price">
+      <div class="row">
+        <div class="col-md-auto title">
+          <span>Filter by price (less than):</span>
+        </div>
+        <div class="col">
+          <span>0 </span>
+          <mat-slider class="price-slider" max="100" min="0" step="1" thumbLabel="true" (ngModel)="priceValue"
+            (change)="rangeChange($event)">
+          </mat-slider>
+          <span> 100</span>
+        </div>
+      </div>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/events/create">
+                  <button class="btn btn-outline-primary action" name="add">Create event</button>
+              </a>
+        </li>
+      </ul>
+  </div>
+  
+  <div class="list-group events-list">
+    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="row">
+        <div class="col col-md-2 image-col">
+          <img class="img-avatar" src="{{avatarLink}}">
+        </div>
+        <div class="col col-md-8 text-col">
+          <h1 class="mb-1">{{item.payload.doc.data().name}} </h1>
+          <h4 class="mb-1">Location: {{item.payload.doc.data().location}} </h4>
+          <h4 class="mb-1">Date: {{item.payload.doc.data().date}} </h4>
+          <small>Price: {{item.payload.doc.data().price}}</small>
+        </div>
+        <div class="col col-md-2 actions-col">
+          <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
