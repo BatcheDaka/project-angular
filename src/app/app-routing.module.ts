@@ -1,42 +1,54 @@
-import { NgModule } from '@angular/core';
+import { UserComponent } from './user/user.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { VenuesModule } from './venues/venues.module';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/common/components/home/home.component';
-import { BooksComponent } from './modules/books/components/books/books.component';
-import { LoginComponent } from './modules/authen/components/login/login.component';
-import { AboutComponent } from './modules/common/components/about/about.component';
-import { OrdersComponent } from './modules/orders/components/orders/orders.component';
-import { AdminBooksComponent } from './modules/admin/components/admin-books/admin-books.component';
- 
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { redirectUnauthorizedTo, canActivate } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = redirectUnauthorizedTo(['login']);
+
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    pathMatch: 'full',
+    component: HomeComponent
   },
   {
-    path:'books',
-    component:BooksComponent
+    path: 'login',
+    pathMatch: 'full',
+    component: LoginComponent,
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'register',
+    pathMatch: 'full',
+    component: RegisterComponent,
   },
   {
-    path:'about',
-    component:AboutComponent
+    path: 'venues',
+    pathMatch: 'full',
+    component: VenuesModule
   },
   {
-    path:'orders',
-    component:OrdersComponent
+    path: 'favourites',
+    pathMatch: 'full',
+    component: FavouritesComponent,
+    loadChildren: './core/core.module#CoreModule',
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
-    path:'admin-books',
-    component:AdminBooksComponent
+    path: 'user',
+    pathMatch: 'full',
+    component: UserComponent,
+    loadChildren: './core/core.module#CoreModule',
+    ...canActivate(redirectUnauthorizedToLogin)
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
-
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const AppRoutingModule = RouterModule.forRoot(routes);

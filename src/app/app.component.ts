@@ -1,21 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'project-angular'
-  books: any;
-  constructor(private db:AngularFireDatabase)
- {
-  
-
-  }
-  ngOnInit(): void {
-    this.db.list('/books').valueChanges()
-                          .subscribe(books=>console.log(books));
-  }
-
+export class AppComponent {
+  title = 'booking';
 }
