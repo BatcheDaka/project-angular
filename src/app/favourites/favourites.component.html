@@ -1,0 +1,25 @@
+<div class="list-group favourites-list">
+  <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="row">
+      <div class="col col-md-2 image-col">
+        <img class="img-avatar" src="{{avatarLink}}">
+      </div>
+      <div class="col col-md-8 text-col">
+        <h5 #favouritesName class="mb-1">ID : {{item.id}}</h5>
+        <h5 class="mb-1">Name {{item.name}} </h5>
+        <h5 class="mb-1">Location {{item.location}} </h5>
+        <h5 class="mb-1">Music: {{item.music}} </h5>
+        <small>Price: {{item.price}}</small>
+      </div>
+      <div class="col col-md-2 actions-col">
+        <button class="btn btn-outline-primary action" (click)="removeFromFavourites(item.nameToSearch)"
+          type="button">Remove from Favourites
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="items.length ===0">
+    <div class="msg"> You don't have any venues added to favourites yet! Please go to Venues to add some!</div>
+    <img class="img-noFavourites" src="{{noFavouritesLink}}">
+  </div>
+</div>
