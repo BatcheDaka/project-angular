@@ -5,11 +5,11 @@
         <img class="img-avatar" src="{{avatarLink}}">
       </div>
       <div class="col col-md-8 text-col">
-        <h5 #favouritesName class="mb-1">ID : {{item.id}}</h5>
-        <h5 class="mb-1">Name {{item.name}} </h5>
-        <h5 class="mb-1">Location {{item.location}} </h5>
+        <!-- <h5 #favouritesName class="mb-1">ID : {{item.id}}</h5> -->
+        <h5 class="mb-1">Name: {{item.name}} </h5>
+        <h5 class="mb-1">Location: {{item.location}} </h5>
         <h5 class="mb-1">Music: {{item.music}} </h5>
-        <small>Price: {{item.price}}</small>
+        <small>Price: {{item.price}} lv.</small>
       </div>
       <div class="col col-md-2 actions-col">
         <button class="btn btn-outline-primary action" (click)="removeFromFavourites(item.nameToSearch)"
