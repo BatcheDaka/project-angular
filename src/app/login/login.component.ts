@@ -28,12 +28,12 @@ export class LoginComponent {
       password: ['', Validators.required]
     });
   }
-  tryFacebookLogin() {
-    this.authService.doFacebookLogin()
-      .then(res => {
-        this.router.navigate(['/user']);
-      });
-  }
+  // tryFacebookLogin() {
+  //   this.authService.doFacebookLogin()
+  //     .then(res => {
+  //       this.router.navigate(['/user']);
+  //     });
+  // }
   tryLogin(value) {
     this.authService.doLogin(value)
       .then(res => {

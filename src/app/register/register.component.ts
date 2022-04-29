@@ -31,14 +31,14 @@ export class RegisterComponent {
     });
   }
 
-  tryFacebookLogin() {
-    this.authService.doFacebookLogin()
-      .then(res => {
-        this.router.navigate(['/user']);
-        this.firebaseService.createFavouritesProperty(res.user.uid);
-      }, err => console.log(err)
-      );
-  }
+  // tryFacebookLogin() {
+  //   this.authService.doFacebookLogin()
+  //     .then(res => {
+  //       this.router.navigate(['/user']);
+  //       this.firebaseService.createFavouritesProperty(res.user.uid);
+  //     }, err => console.log(err)
+  //     );
+  // }
 
   tryRegister(value) {
     this.authService.doRegister(value)

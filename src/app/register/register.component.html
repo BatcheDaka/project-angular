@@ -31,11 +31,11 @@
         <div class="register-button">
           <button [disabled]="registerForm.invalid" type="submit" (click)="tryRegister(registerForm.value)"
             class="btn btn-success">Register</button>
-          <p class="black">...or you can just...</p>
+          <!-- <p class="black">...or you can just...</p> -->
         </div>
 
-        <button [ngStyle]="{'color':'white'}" type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with
-          Facebook</button>
+        <!-- <button [ngStyle]="{'color':'white'}" type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with
+          Facebook</button> -->
 
         <p class="black">Already have an account? <a class="black" routerLink="/login">Login</a>.</p>
       </form>
