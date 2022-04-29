@@ -1,27 +1,42 @@
-# ProjectAngular
+# CREATING EVENTS SITE USING ANGULAR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+| Contents
+|---
+| [Application Structure](#application)
+| [General](#general)
+| [Other](#other)
+| [Authentication](#authentication)
 
-## Development server
+## 1.Application Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The application have:
+*	Public Part (Accessible without authentication)
+*	Private Part (Available for Registered Users)
+### 1.1 Public Part
+The public part is visible without authentication. This is the list of all events and venues created on the site. There is option to find the events or venues searching by name or filtering by price range.
+### 1.2 Private Part (User Area)
+Registered users can add venues and events in the site. They alos can add venues in their favourite list. Users can acces the application after succesful login or after creating new account using email and password.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
- 
-## Build
+## General
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Dynamic pages - Venues, Events, Favourites
+* Views - Venues, Events (all items), Favourites (specific for logged in user)
+* Logged user can add, update or delete events and venues. They can favourite venues.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Authentication
 
-## Running end-to-end tests
+The service is initialized with 1 user, which can be used for immediate testing:
+* dakata@gmail.com : 123456
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Additional users can be added via the Register link.
 
-## Further help
+* Register - register wit e-mail and password
+* Login - login with existing e-mail and password
+* Logout - viewing the site as guest
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+#### Development server
+
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
