@@ -1,11 +1,15 @@
 <mat-nav-list class="sidenav-list">
-    <a mat-list-item  routerLink="/login" (click)="onToggleClose()" >
+    <a *ngIf="!isUserLogged()" mat-list-item  routerLink="/login" (click)="onToggleClose()" >
       <mat-icon>input</mat-icon>
       <span>Login</span>
     </a>
-    <a mat-list-item routerLink="/register" (click)="onToggleClose()">
+    <a *ngIf="!isUserLogged()" mat-list-item routerLink="/register" (click)="onToggleClose()">
       <mat-icon>account_circle</mat-icon>
       <span>Register</span>
+    </a>
+    <a *ngIf="isUserLogged()" mat-list-item routerLink="/" (click)="logout()">
+      <mat-icon>output</mat-icon>
+      <span>Logout</span>
     </a>
     <a mat-list-item routerLink="/venues" (click)="onToggleClose()">
       <mat-icon>business</mat-icon>

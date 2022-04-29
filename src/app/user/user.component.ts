@@ -36,4 +36,6 @@ export class UserComponent implements OnInit {
         console.log('Logout error', error);
       });
   }
+  
 }
+
